@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('feedbacks', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id')->unsigned();
-            $table->bigInteger('category_id')->unsigned();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('category_id');
             $table->string('title');
             $table->longText('description');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
